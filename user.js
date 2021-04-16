@@ -1707,3 +1707,26 @@ user_pref("plugin.state.flash", 0); // [DEFAULT: 1]
 
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
+
+///////////////////////////////////////////////////////////////////////////////
+// CUSTOM - my personal preferences
+// some taken from https://www.privacytools.io/browsers/#about_config
+///////////////////////////////////////////////////////////////////////////////
+// allow cookies to remain when I close the browser
+// - use cookie-autodelete instead to whitelist cookies for
+//   signon pages and clean the rest
+// - https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/
+user_pref("privacy.clearOnShutdown.cookies", false);
+// disable saving passwords
+user_pref("signon.rememberSignons", false);
+// disable pocket extension
+user_pref("extensions.pocket.enabled", false);
+// override recipe: FF87+ use ETP Strict mode
+// - https://github.com/arkenfox/user.js/issues/1080
+user_pref("privacy.firstparty.isolate", false); // 4001
+user_pref("network.cookie.cookieBehavior", 5); // 2701
+user_pref("browser.contentblocking.category", "strict"); // 2701
+// enable fission
+user_pref("fission.autostart", true);
+// END: update our custom variable
+user_pref("_user.js.parrot", "SUCCESS: custom settings loaded successfully!");
